@@ -1,0 +1,162 @@
+/* 초기화 */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  color: inherit;
+  text-decoration: none;
+}
+
+.app{max-width: 100vw;}
+.container{width: 1320px; margin: 0 auto;}
+.flex{display: flex;}
+
+.loading{display: none; animation: loadBox 4s linear; width: 100vw; height: 100vh; background-color: rgba(0, 0, 0, 0.842); position: fixed; z-index: 100;}
+.loading > .bar{position: relative; width: 600px; height: 100px; border-radius: 200px; border: 5px solid black; margin: 20% auto;}
+.loading > .bar > .obj{top: 0; background-color: #ffc500; left: 0; position: absolute; width: 0%; height: 100px; border-radius: 200px; animation: load 4s ease-in-out;}
+
+@keyframes load {
+  0%{width: 0%;}
+  100%{width: 100%;}
+}
+
+@keyframes loadBox {
+  0%{display: block;}
+  100%{display: none;}
+}
+
+/* 헤더 */
+.headerBox{height: 100px;}
+header{position: fixed; z-index: 10; top: 0; width: 100%; height: 100px; font-weight: bold; background-color: white;}
+header > .container{display: flex; align-items: center; justify-content: space-between;}
+header img{height: 100px;}
+header a{display: block;}
+header nav > ul > li:hover a{background-color: gray;}
+header nav > ul > li a:hover{color: white;}
+header nav > ul{display: flex;}
+header nav > ul > li{position: relative; width: 150px; height: 70px; line-height: 70px; text-align: center;}
+header nav > ul > li::before{content: ""; transition: .1s; scale: 0; position: absolute; bottom: 0; left: 0; width: 100%; height: 5px; background-color: #ffc500; }
+header nav > ul > li:hover::before{scale: 1;}
+header .sub > li{background-color: gray;}
+header .sub{height: 0; transition: .3s; overflow: hidden;}
+header ul:hover .sub{height: 140px;}
+header .sub a:hover{color: white;}
+.sign{display: flex; width: 300px; justify-content: space-around;}
+.sign a{display: block; width: 70px; height: 40px; line-height: 40px; text-align: center; background-color: #0af; color: white; border-radius: 5px;}
+.sign a:hover{background-color: rgb(0, 143, 214);}
+
+/* 슬라이드 */
+.slide{width: 100%; height: 840px; position: relative; overflow: hidden; pointer-events: auto;}
+.slide::before{pointer-events: auto; content: ""; width: 100%; height: 100%; position: absolute; backdrop-filter: blur(5px); top: 0; left: 0; background: repeating-linear-gradient(45deg , transparent 10px , rgba(0,0,0,0.2)15px),repeating-linear-gradient(-45deg , transparent 10px , rgba(0,0,0,0.2)15px);}
+.slide:hover ul{animation-play-state: paused;}
+.slide::after{content: ""; width: 45%; height: 100%; position: absolute; left: 0; top: 0; background-color: rgba(0, 0, 0, 0.548);}
+.slide > ul{width: 400%; height: 100%; display: flex; animation: slide 10s ease-in-out infinite;}
+.slide > ul > li{width: 100%; height: 100%; background-size: cover;}
+.slide > ul > li:nth-child(1){background-image: url(../assets/slide01.png);}
+.slide > ul > li:nth-child(2){background-image: url(../assets/slide02.png);}
+.slide > ul > li:nth-child(3){background-image: url(../assets/slide03.png);}
+.slide > ul > li:nth-child(4){background-image: url(../assets/slide01.png);}
+.textSlide{width: 700px; height: 400px; overflow: hidden; position: absolute; top: 30%; left: 7%; z-index: 4;}
+.textSlide > ul{display: flex; width: 400%; height: 100%; animation: slide 10s ease-in-out infinite;}
+.textSlide > ul > li{width: 100%; height: 100%;}
+.textSlide > ul > li > p:nth-child(1){font-size: 100px; font-weight: bold; color: white;}
+.textSlide > ul > li > p:nth-child(2){font-size: 20px; color: white;}
+.back{position: absolute; width: 100%;height: 200px; background-image: url(../images02/back.png); z-index: 8; bottom: -30px; left: 0;}
+@keyframes slide {
+  0%{margin-left: 0 ;}
+  30%{margin-left: 0;}
+  33%{margin-left: -100%;}
+  63%{margin-left: -100%;}
+  66%{margin-left: -200%;}
+  96%{margin-left: -200%;}
+  99%{margin-left: -300%;}
+  99.99999%{margin-left: -300%;}
+}
+
+/* 판매상품 */
+.sale{width: 100%; position: relative;}
+.sale .container > p{font-size: 100px; font-weight: bold; color: #ffc500;}
+.sale .container > div > p{font-size: 50px; font-weight: bold;}
+.sale .container > div{margin-top: 100px;}
+.sale .container > div > div{display: flex; justify-content: space-between;}
+.sale .container > div .img{cursor: pointer; position: relative;width: 300px; height: 300px; border-radius: 10px; overflow: hidden; background-size: cover;}
+.sale .container > div:nth-child(2) > div > div:nth-child(1) .img{background-image: url(../선수제공파일/A-Module/images/건강식품/1.PNG);}
+.sale .container > div:nth-child(2) > div > div:nth-child(2) .img{background-image: url(../선수제공파일/A-Module/images/건강식품/2.PNG);}
+.sale .container > div:nth-child(2) > div > div:nth-child(3) .img{background-image: url(../선수제공파일/A-Module/images/건강식품/3.PNG);}
+.sale .container > div:nth-child(3) > div > div:nth-child(1) .img{background-image: url(../선수제공파일/A-Module/images/디지털/1.PNG);}
+.sale .container > div:nth-child(3) > div > div:nth-child(2) .img{background-image: url(../선수제공파일/A-Module/images/디지털/2.PNG);}
+.sale .container > div:nth-child(3) > div > div:nth-child(3) .img{background-image: url(../선수제공파일/A-Module/images/디지털/3.PNG);}
+.sale .container > div:nth-child(4) > div > div:nth-child(1) .img{background-image: url(../선수제공파일/A-Module/images/팬시/1.PNG);}
+.sale .container > div:nth-child(4) > div > div:nth-child(2) .img{background-image: url(../선수제공파일/A-Module/images/팬시/2.PNG);}
+.sale .container > div:nth-child(4) > div > div:nth-child(3) .img{background-image: url(../선수제공파일/A-Module/images/팬시/3.PNG);}
+.sale .container > div:nth-child(5) > div > div:nth-child(1) .img{background-image: url(../선수제공파일/A-Module/images/향수/1.PNG);}
+.sale .container > div:nth-child(5) > div > div:nth-child(2) .img{background-image: url(../선수제공파일/A-Module/images/향수/2.PNG);}
+.sale .container > div:nth-child(5) > div > div:nth-child(3) .img{background-image: url(../선수제공파일/A-Module/images/향수/3.PNG);}
+.sale .container > div:nth-child(6) > div > div:nth-child(1) .img{background-image: url(../선수제공파일/A-Module/images/헤어케어/1.PNG);}
+.sale .container > div:nth-child(6) > div > div:nth-child(2) .img{background-image: url(../선수제공파일/A-Module/images/헤어케어/2.PNG);}
+.sale .container > div:nth-child(6) > div > div:nth-child(3) .img{background-image: url(../선수제공파일/A-Module/images/헤어케어/3.PNG);}
+.sale .container > div > div p{display: none; position: absolute; z-index: 8; top: 42%; left: 33%; font-size: 20px; font-weight: bold;  width: 100px; height: 40px; line-height: 40px; text-align: center; color: white; border: 1px solid white;}
+.sale .container > div > div p:hover{background-color: rgba(0, 0, 0, 0.336);}
+.sale .container > div > div > div .img::before{display: none; content: ""; width: 100%; height: 100%; position: absolute; top: 0; left: 0; background-color: rgba(0, 0, 0, 0.192);}
+.sale .container > div > div > div .img:hover::before{display: block;}
+.sale .container > div > div > div:hover p{display: block;}
+.sale .back{width: 100%; height: 200px; position: absolute; background-image: url(../assets/back.png) ; rotate: 180deg; bottom: -200px; left: 0;}
+
+/* 공지사항 */
+.notice{position: relative; margin-top: 100px; padding-top: 200px; width: 100%; height: 1100px; background-color: #ffc500;}
+.notice .container > p{font-size: 100px; font-weight: bold; color: white; padding-bottom: 200px;}
+.notice table{font-size: 20px;}
+.notice table th:nth-child(1){font-size: 25px; width: 100px; text-align: center; }
+.notice table th:nth-child(2){font-size: 25px; width: 1000px; text-align: center;}
+.notice table th:nth-child(3){font-size: 25px; width: 200px; text-align: center;}
+.notice table td:nth-child(1){width: 100px; text-align: center; padding: 20px; border-radius: 200px;}
+.notice table td:nth-child(2){ width: 1000px; text-align: center; cursor: pointer;}
+.notice table td:nth-child(2):hover{text-decoration: underline;}
+.notice table td:nth-child(3){width: 200px; text-align: center;}
+.notice .event{font-weight: bold; background-color: #0af; color: white;}
+.notice .nomal{font-weight: bold; background-color: white;}
+.backTwo{width: 100%; height: 200px; z-index: 8; position: absolute; bottom: -180px; left: 0; rotate: 180deg; background-image: url(../images02/back02.png);}
+.page {margin: 0 auto; display: flex; width: 600px; height: 40px; justify-content: space-around; align-items: center;}
+.page > p{color: white; font-weight: bold; cursor: pointer; width: 50px; height: 50px; line-height: 50px; text-align: center; border-radius: 10px; border: 1px solid rgb(236, 236, 236);}
+.page > p:hover{background-color: #e2ad00;}
+
+/* 상품입점/제휴문의 */
+.shop{padding-top: 300px;}
+.shop .container{height: 1000px; display: flex; flex-direction: column; justify-content: space-around;}
+.shop .container > p:nth-child(1){font-size: 80px; text-align: center; font-weight: bold;}
+.shop .container > p:nth-child(2){font-size: 25px; color: #d6d6d6; text-align: center;}
+.shop .container i{font-size: 30px; font-weight: bold;}
+.shop .container > .step{width: 100%; display: flex;}
+.shop .container > .step > div{position: relative; flex: 1; height: 180px; background-color: white; padding-left: 30px;}
+.shop .container > .step > div:nth-child(1){background-color: #ffc500;}
+.shop .container > .step > div:nth-child(3){background-color: #ffc500;}
+.shop .container > .step > div:nth-child(5){background-color: #ffc500;}
+.shop .container > .step > div p:nth-child(2){ font-weight: bold;}
+.shop .container > .step > div p:nth-child(3){width: 70%;font-size: 14px;}
+.shop .container span{position: absolute; z-index: 6; right: -20px; top: 45%; width: 40px; rotate: 45deg; height: 40px; line-height: 40px; text-align: center; background-color: inherit;}
+.shop .container span p{ rotate: -45deg; font-size: 20px;}
+.shop .banner{width: 100%; height: 300px; display: flex; justify-content: space-between;}
+.shop .banner > div{border: 1px solid #eee; width: 300px; font-size: 25px; height: 300px; border-radius: 10px; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center;}
+.shop .banner > div:hover{background-color: rgba(0, 0, 0, 0.24);}
+
+/* 푸터 */
+footer{height: 500px; color: #bdbdbd; background-color: #f1f1f1; padding-top: 50px;}
+footer .flex{margin-top: 40px;}
+footer > .flex:nth-child(1){justify-content: space-around; font-weight: bold;}
+footer > .flex:nth-child(1) > .flex p:hover{color: black; cursor: pointer;}
+footer > .flex:nth-child(2){justify-content: space-around;}
+footer img{height: 100px; filter: grayscale(100%);}
+footer .sns{font-size: 35px;}
+footer .flex{justify-content: space-around;}
+footer .sns > p:nth-child(1):hover{cursor: pointer; color: red;}
+footer .sns > p:nth-child(2):hover{cursor: pointer; color: blue;}
+footer .sns > p:nth-child(3):hover{cursor: pointer; color:skyblue;}
+footer .sns > p:nth-child(4):hover{cursor: pointer; color: black;}
+footer .sns > p:nth-child(5):hover{cursor: pointer; color: green;}
+
+
+/* 반응형 */
+@media screen {
+  
+}

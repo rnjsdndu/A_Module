@@ -555,7 +555,7 @@ h1 {
   height: calc(100vh - 458px);
 }
 
-.cart{
+.cart {
   height: calc(100vh - 412px);
 }
 
@@ -601,7 +601,7 @@ h1 {
   text-align: right;
 }
 
-.C_allPrice{
+.C_allPrice {
   font-size: 50px;
   position: absolute;
   top: 95px;
@@ -609,11 +609,91 @@ h1 {
   text-align: center;
 }
 
-.C_allPrice .allPriceText{
+.C_allPrice .allPriceText {
   border-bottom: 3px dotted black;
 }
 
+.motto {
+  height: 800px;
+  margin-top: 100px;
+}
 
+.motto ul {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  gap: 20px;
+}
 
+.motto li {
+  flex: 1;
+}
 
+.motto li {
+  background-size: cover;
+}
 
+.motto li:nth-child(1) {
+  background-image: url(../../선수제공파일/B-Module/나눔혁신.jpg);
+  height: 100%;
+}
+
+.motto li:nth-child(2) {
+  background-image: url(../../선수제공파일/B-Module/미래혁신.jpg);
+  height: 100%;
+}
+
+.motto li:nth-child(3) {
+  background-image: url(../../선수제공파일/B-Module/보안혁신.jpg);
+  height: 100%;
+}
+
+.motto li:nth-child(4) {
+  background-image: url(../../선수제공파일/B-Module/신뢰혁신.jpg);
+  height: 100%;
+}
+
+.motto li:nth-child(5) {
+  background-image: url(../../선수제공파일/B-Module/환경혁신.jpg);
+  height: 100%;
+}
+
+.bg-one {
+  background-image: url(../../선수제공파일/B-Module/나눔혁신.jpg);
+}
+
+.bg-one {
+  background-image: url(../../선수제공파일/B-Module/미래혁신.jpg);
+}
+
+.bg-one {
+  background-image: url(../../선수제공파일/B-Module/보안혁신.jpg);
+}
+
+.bg-one {
+  background-image: url(../../선수제공파일/B-Module/신뢰혁신.jpg);
+}
+
+.bg-one {
+  background-image: url(../../선수제공파일/B-Module/환경혁신.jpg);
+}
+
+.bp-one {
+  background-position: 0%;
+}
+
+.bp-two {
+  background-position: 25%;
+}
+
+.bp-three {
+  background-position: 50%;
+}
+
+.bp-four {
+  background-position: 75%;
+}
+
+.bp-five {
+  background-position: 100%;
+}

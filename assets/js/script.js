@@ -28,15 +28,25 @@ mottos.forEach((motto, index) => {
 });
 
 
-const controlor = [...document.querySelectorAll('.control li')]
+function video() {
+  const video = document.querySelector("video") 
 
-controlor.forEach(e=>{
-  controlor[0].addEventListener('click' , ()=>{
-    
-  })
-})
+  const videoAction = {
+    play: ()=> video.play(),
+    pause: ()=> video.pause(),
+    stop: ()=> video.pause(),
+    back: ()=> video.currentTime -= 10,
+    fast: ()=> video.video.currentTime += 10,
+    speedDown: ()=> video.playbackRate -= .1,
+    speedUp: ()=> video.playbackRate += .1,
+    reset: ()=> video.playbackRate = 1,
+    re: ()=> video.loop = !video.loop
+  }
+  
+  for (const i in videoAction) {
+    document.getElementById(i).addEventListener("click", videoAction[i])
+  }
 
+}
 
-
-
-
+video();
